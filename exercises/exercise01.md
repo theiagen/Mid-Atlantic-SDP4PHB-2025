@@ -50,6 +50,6 @@
  <summary> Exercise 1 Solution
  </summary><br />
 
-A modified fastq-peek.sh code with gc-count calculation and reporting can be found in the [back of the book](..back-of-the-book/fastq-peek-gc.sh).
+A modified fastq-peek.sh code with gc-count calculation and reporting can be found in the [back of the book](../back-of-the-book/fastq-peek-gc.sh).
 
 </details>
