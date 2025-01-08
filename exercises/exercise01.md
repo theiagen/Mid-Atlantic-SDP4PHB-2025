@@ -41,6 +41,7 @@
 </p>
 
     - Navigate to https://gitpod.io/, find your workspace in the list, click on the three-dot button, and select "Stop"
+
 <p align="center">
   <img src="../images/stop-workspace2.png" width="800" class="center">
 </p>
