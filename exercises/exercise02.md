@@ -13,13 +13,14 @@
 </p>
 
 2. Currently, you should be working within the main branch of this repo, but this is a protected branch to which we cannot commit direcly. Instead, a dev branch must be created and PR issued to push changes to main. To do this:
-    - Use VSCode to create a dev branch by clicking "main" in the bottom left corner, naming your branch in the text box that appears (e.g. `kgl-gc-count-dev`) and selecting "Create new branch".
+    - Use VSCode to create a dev branch by clicking "main" in the bottom left corner, naming your branch in the text box that appears (e.g. `im-gc-count-dev`) and selecting "Create new branch".
 
 <p align="center">
   <img src="../images/e2-2a.png" width="800" class="center">
 </p>
 
-    - Click the push icon in the bottom-left corner of your VSCode interface to publish this branch to the remote repository.
+  - Click the push icon in the bottom-left corner of your VSCode interface to publish this branch to the remote repository.
+
 <p align="center">
   <img src="../images/e2-2b.png" width="800" class="center">
 </p>
