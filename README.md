@@ -104,7 +104,7 @@ Once registered, navigate to your User Settings to enable write access to public
   <img src="./images/rm_05.png" width="800" class="center">
 </p>
 
-  - Set the repository to https://github.com/theiagen/DCLS-SDP4PHB-2025/
+  - Set the repository to https://github.com/theiagen/Mid-Atlantic-SDP4PHB-2025/
   - Select the default Editor and default Class, click "Continue"
 
 <p align="center">
