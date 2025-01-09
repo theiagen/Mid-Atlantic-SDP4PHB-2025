@@ -6,7 +6,7 @@
     - Navigate to https://gitpod.io/
     - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
     - Start New Workspace
-    - Set the repository to https://github.com/theiagen/DCLS-SDP4PHB-2025/
+    - Set the repository to https://github.com/theiagen/Mid-Atlantic-SDP4PHB-2025/
     - Select the default Editor and default Class, click "Continue"
   
 <p align="center">
@@ -34,13 +34,14 @@
 7. Save your changes within your workspace
 
 8. Once you're finished working, make sure to shut down your workspace to save your allotted free hours (50hr/month) in GitPod. There are a few ways to stop your workspace from running:
-    - In GitPod environment (VSCode interface), click on the orange Gitpod in bottom left corner. Select "Stop Workspace"
+  - In GitPod environment (VSCode interface), click on the orange Gitpod in bottom left corner. Select "Stop Workspace"
 
 <p align="center">
   <img src="../images/stop-workspace.png" width="600" class="center">
 </p>
 
-    - Navigate to https://gitpod.io/, find your workspace in the list, click on the three-dot button, and select "Stop"
+  - Navigate to https://gitpod.io/, find your workspace in the list, click on the three-dot button, and select "Stop"
+
 <p align="center">
   <img src="../images/stop-workspace2.png" width="800" class="center">
 </p>

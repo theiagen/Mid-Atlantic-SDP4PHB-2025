@@ -40,12 +40,12 @@ All lecture content will be recorded and made available through this GitHub repo
 **Week 01: Design Documents & Development Environments**
 - [Lecture Slides]()
 - [Recording]()
-- [Exercise 01: Design Doc, Dev Environment, and Scripting with VSCode]()
+- [Exercise 01: Design Doc, Dev Environment, and Scripting with VSCode](./exercises/exercise01.md)
 
 **Week 02: Git Fundamentals and Making Source Code Modifications**
 - [Lecture Slides]()
 - [Recording]()
-- [Exercise 02: Version Control with Git]()
+- [Exercise 02: Version Control with Git](./exercises/exercise02.md)
 
 **Week 03: Bringing Changes into Production**
 - [Lecture Slides]()
