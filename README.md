@@ -50,7 +50,7 @@ All lecture content will be recorded and made available through this GitHub repo
 **Week 03: Bringing Changes into Production**
 - [Lecture Slides]()
 - [Recording]()
-- [Exercise 03: GitHub Actions & Static Releases]()
+- [Exercise 03: GitHub Actions & Static Releases](./exercises/exercise03.md)
   
 **Week 04: Getting started with Nextflow**
 - [Lecture Slides]()
