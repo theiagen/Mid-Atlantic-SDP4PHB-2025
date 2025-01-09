@@ -51,6 +51,6 @@ error: failed to push some refs to 'https://github.com/theiagen/Western-WFD-2024
  <summary> Exercise 3 Solution
  </summary><br/>
 
-A modified test.yml file to account for gc-count reporting can be found in the [back of the book](https://github.com/theiagen/Western-WFD-2024/blob/main/back-of-the-book/test-gc.yml).
+A modified test.yml file to account for gc-count reporting can be found in the [back of the book](../back-of-the-book/test-gc.yml).
 
 </details>
