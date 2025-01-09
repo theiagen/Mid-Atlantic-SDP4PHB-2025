@@ -34,7 +34,7 @@ error: failed to push some refs to 'https://github.com/theiagen/Western-WFD-2024
 
    - Update your Git remote URL to use the new token:
        ```bash
-       git remote set-url origin https://<your-token>@github.com/theiagen/Western-WFD-2024.git
+       git remote set-url origin https://<your-token>@github.com/theiagen/Mid-Atlantic-SDP4PHB-2025.git
        ```
 
        - Replace `<your-token>` with your new PAT.
