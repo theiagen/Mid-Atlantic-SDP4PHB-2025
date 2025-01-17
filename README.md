@@ -61,14 +61,18 @@ All lecture content will be recorded and made available through this GitHub repo
 In addition to lectures, this course consists of several hands-on exercises to reinforce the coursework material. To participate in these exercises, trainees will need the following resources: 
 
 ### GitHub Account
-If you don't already have a GitHub account, please go to github.com and register (it's free!)
-  - Once you have registered, ensure you are signed into your account on github.com
+If you don't already have a GitHub account, please go to github.com and register (it's free!). To sign-in to GitHub, please follow the URL at https://github.com/signup
+  - Once you have registered, ensure you are signed into your account on https://github.com
 
-### GitPod Account 
-- Navigate to https://gitpod.io/
+### Visual Studio Code
+Visual Studio Code, commonly referred to as VS Code, is an Integrated Development Environment (IDE) developed by Microsoft for Windows, Linux, macOS. Features include support for debugging, syntax highlighting, and embedded version control with Git. VS Code supports almost every major programming language. 
+- You can download VS Code for your system at https://code.visualstudio.com 
+
+### GitPod Flex Account 
+- Navigate to https://app.gitpod.io/
 - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
 
-### GitPod Configuration for Public Repositories
+#### GitPod Flex Configuration for Public Repositories
 Once registered, navigate to your User Settings to enable write access to public repositories:
 - User Settings can be accessed by clicking your profile photo in the upper right hand corner
 
@@ -97,7 +101,7 @@ Once registered, navigate to your User Settings to enable write access to public
   <img src="./images/rm_04.png" width="400" class="center">
 </p>
 
-### GitPod Workspace
+#### GitPod Workspace
   - Navigate to your Workspaces tab and select New Workspace
 
 <p align="center">
