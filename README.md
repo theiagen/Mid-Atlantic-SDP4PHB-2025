@@ -61,68 +61,65 @@ All lecture content will be recorded and made available through this GitHub repo
 In addition to lectures, this course consists of several hands-on exercises to reinforce the coursework material. To participate in these exercises, trainees will need the following resources: 
 
 ### GitHub Account
-If you don't already have a GitHub account, please go to github.com and register (it's free!)
-  - Once you have registered, ensure you are signed into your account on github.com
+If you don't already have a GitHub account, please go to github.com and register (it's free!). To sign-in to GitHub, please follow the URL at https://github.com/signup
+  - Once you have registered, ensure you are signed into your account on https://github.com
 
-### GitPod Account 
-- Navigate to https://gitpod.io/
+### Visual Studio Code
+Visual Studio Code, commonly referred to as VS Code, is an Integrated Development Environment (IDE) developed by Microsoft for Windows, Linux, macOS. Features include support for debugging, syntax highlighting, and embedded version control with Git. VS Code supports almost every major programming language. 
+- You can download VS Code for your system at https://code.visualstudio.com 
+
+### GitPod Flex Account 
+- Navigate to https://app.gitpod.io/
 - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
 
-### GitPod Configuration for Public Repositories
-Once registered, navigate to your User Settings to enable write access to public repositories:
-- User Settings can be accessed by clicking your profile photo in the upper right hand corner
+#### Creating your own ograzination
+Once your account is connected to GitPod, it will prompt you to create an organization. Unfortunately this step cannot be skipped. You create an organization with whatever name you wish, this will not matter once you are invited to this course's organization. 
 
 <p align="center">
-  <img src="./images/rm_01.png" width="800" class="center">
+  <img src="./images/rm_gitpodflex_01.png" width="800" class="center">
 </p>
 
-
-  - Select Git Providers
+#### GitPod Flex Configuration for Public Repositories
+Once registered and part of this course's organization, navigate to **Create Environment** button on the top right panel of your screen.
 
 <p align="center">
-  <img src="./images/rm_02.png" width="800" class="center">
+  <img src="./images/rm_gitpodflex_02.png" width="400" class="center">
 </p>
 
-
-  - Then select the three verticle dots on the right of the GitHub section and select "Edit Permissions"
+  - Create a new environment and connect with 
+  the course's repository https://github.com/theiagen/Mid-Atlantic-SDP4PHB-2025.
 
 <p align="center">
-  <img src="./images/rm_03.png" width="800" class="center">
+  <img src="./images/rm_gitpodflex_03.png" width="400" class="center">
 </p>
 
-
-  - From the Edit Permissions menu, check "public_repo", then click "Update Permissions"
+  - You«ll be prompted to connect to GitHub via an access token. Select the **Developer Settings** URL and follow the configuration process on GitHub.
 
 <p align="center">
-  <img src="./images/rm_04.png" width="400" class="center">
+  <img src="./images/rm_gitpodflex_04.png" width="400" class="center">
 </p>
 
-### GitPod Workspace
-  - Navigate to your Workspaces tab and select New Workspace
-
 <p align="center">
-  <img src="./images/rm_05.png" width="800" class="center">
+  <img src="./images/rm_gitpodflex_05.png" width="400" class="center">
 </p>
 
-  - Set the repository to https://github.com/theiagen/Mid-Atlantic-SDP4PHB-2025/
-  - Select the default Editor and default Class, click "Continue"
+  - Paste the Personal Access token on the required field and click **Connect**. 
+
+#### GitPod Workspace
+  - Once your workspace is running, select **Open with VS Code**
 
 <p align="center">
-  <img src="./images/e1-1.png" width="600" class="center">
+  <img src="./images/rm_gitpodflex_06.png" width="800" class="center">
+</p>
+
+  - VS Code will open and you'll be prompted to install GitPod Extension and connect to your new environment. Click **"Install Extension and Open URI"**
+
+<p align="center">
+  <img src="./images/rm_gitpodflex_07.png" width="600" class="center">
 </p>
  
-
-🚨**NOTE**🚨 Once you're finished working, make sure to shut down your workspace to save your allotted free hours (50hr/month) in GitPod. There are a few ways to stop your workspace from running:
-- In GitPod environment (VSCode interface), click on the orange Gidpod in bottom left corner. Select "Stop Workspace"
-
-<p align="center">
-  <img src="./images/stop-workspace.png" width="600" class="center">
+ <p align="center">
+  <img src="./images/rm_gitpodflex_08.png" width="600" class="center">
 </p>
 
-- Navigate to https://gitpod.io/, find your workspace in the list, click on the three-dot button, and select "Stop" 
-
-<p align="center">
-  <img src="./images/stop-workspace2.png" width="800" class="center">
-</p>
-
-
+🚨**NOTE**🚨 Once you're finished working, make sure to shut down your workspace in GitPod. There are a few ways to stop your workspace from running! It will auto-stop after 30 minutes of inactivity to save resources but you can force it to stop by clicking on the **toggle next to the status information**. 
