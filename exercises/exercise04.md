@@ -167,6 +167,60 @@ make sure you are actually done!
 
 ---
 
+## Creating your first Nextflow workflow - Count lines on a file
+
+Now that we know how to execute Nextflow workflows, we can start diving into writing our own! First, we need to understand the basic components of a workflow.
+
+### The Nextflow script file
+
+A Nextflow script file is the core of a Nextflow workflow, written in a domain-specific language (DSL) based on Groovy. It defines **processes**, which are the building blocks of the workflow, and specifies how data flows between them (**channels**). Each process contains a script that describes the task to execute, such as running a bioinformatics tool, and includes input and output definitions. Operations can be done on the data within the channels before being passed on to the processes. 
+
+The `main.nf` file is the central script in a Nextflow workflow. It defines the structure and execution logic of the pipeline by orchestrating the processes and connecting them with channels. This file acts as the "blueprint" for how data flows through the pipeline and how tasks are executed.
+
+Let's look at the `main.nf` script of a workflow to count the lines in a file
+
+```nextflow
+nextflow.enable.dsl=2
+
+workflow {
+    // Define input data or channels
+    Channel.fromPath('data/*.txt') into inputChannel
+
+    // Call a process module
+    countLines(inputChannel) |>
+    resultChannel
+
+    // Perform additional steps (e.g., view results)
+    resultChannel.view()
+}
+``` 
+
+#### Processes
+
+In Nextflow's DSL2 introduces the concept of **modules**, making it easier to create reusable and composable workflows. Processes are defined inside module files and then included in a main workflow. 
+
+Let's look at an example of a process to count lines in a file:
+
+```nextflow
+process countLines {
+    input:
+    path inputFile
+
+    output:
+    path 'result.txt'
+
+    script:
+    """
+    wc -l $inputFile > result.txt
+    """
+}
+````
+
+### The Nextflow config file
+
+
+
+
 
 
 ## Steps
