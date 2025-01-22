@@ -55,7 +55,7 @@ All lecture content will be recorded and made available through this GitHub repo
 **Week 04: Getting started with Nextflow**
 - [Lecture Slides]()
 - [Recording]()
-- [Exercise 04: Writing Your First Nextflow Workflow]()
+- [Exercise 04: Writing Your First Nextflow Workflow](./exercises/exercise04.md)
 
 ## Prerequisites for Hands-On Exercises
 In addition to lectures, this course consists of several hands-on exercises to reinforce the coursework material. To participate in these exercises, trainees will need the following resources: 
