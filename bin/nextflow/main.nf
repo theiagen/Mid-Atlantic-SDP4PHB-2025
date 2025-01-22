@@ -2,7 +2,7 @@
 nextflow.enable.dsl=2
 
 // Correctly include the process definition from the module
-include { countLines } from './modules/count_lines'
+include { fastqStats } from './modules/fastq_stats'
 
 workflow {
     // Define the input channel from the user-specified path
@@ -10,9 +10,6 @@ workflow {
         exit 1, "No file provided with pattern: ${params.input}"
     }
 
-    // Execute the 'countLines' process
-    resultChannel = countLines(IN_FilePath)
-
-    // Print the countLines output to the console
-    resultChannel.view()
+    // Execute the 'fastqStats' process
+    fastqStats(IN_FilePath) | view
 }
