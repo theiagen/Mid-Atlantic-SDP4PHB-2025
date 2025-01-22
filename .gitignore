@@ -178,4 +178,4 @@ work/
 trace.txt
 timeline.html
 report.html
-dag.png
+dag.dot
