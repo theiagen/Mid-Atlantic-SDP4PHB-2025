@@ -1,22 +1,15 @@
 #!/usr/bin/env nextflow
-
 nextflow.enable.dsl=2
 
-process fastq_stats {
-    input:
-    path fastq_file
-
-    output:
-    stdout result
-
-    script:
-    """
-    fastq-peek.sh ${fastq_file}
-    """
-}
+// Correctly include the process definition from the module
+include { fastqStats } from './modules/fastq_stats'
 
 workflow {
-    params.fastq_file = file(params.fastq_file)
+    // Define the input channel from the user-specified path
+    IN_FilePath = Channel.fromPath(params.input).ifEmpty { 
+        exit 1, "No file provided with pattern: ${params.input}"
+    }
 
-    fastq_stats(params.fastq_file)
+    // Execute the 'fastqStats' process
+    fastqStats(IN_FilePath) | view
 }

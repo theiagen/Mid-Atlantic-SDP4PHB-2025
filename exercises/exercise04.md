@@ -167,33 +167,108 @@ make sure you are actually done!
 
 ---
 
-## Creating your first Nextflow workflow - Count lines on a file
+## Creating your first Nextflow workflow - Get basic statistics on a FASTQ file
 
 Now that we know how to execute Nextflow workflows, we can start diving into writing our own! First, we need to understand the basic components of a workflow.
 
-### The Nextflow script file
-
 A Nextflow script file is the core of a Nextflow workflow, written in a domain-specific language (DSL) based on Groovy. It defines **processes**, which are the building blocks of the workflow, and specifies how data flows between them (**channels**). Each process contains a script that describes the task to execute, such as running a bioinformatics tool, and includes input and output definitions. Operations can be done on the data within the channels before being passed on to the processes. 
+
+### The Nextflow module file
+
+The module is where you usually can find the processes of a workflow. Best practise is to have a process per module or to group processes that that share something in common (helps to keep things tidy!). 
+
+Let's look at the `fastq_stats.nf` module to get number of reads and GC content of a FASTQ file
+
+```nextflow
+process fastqStats {
+    input:
+        path inputFile
+
+    output:
+        stdout
+
+    script:
+        """
+        # Count number of reads in FASTQ file
+        ## Count the number of lines in the FASTQ file
+        LINE_COUNT=\$(wc -l < "${inputFile}")
+        ## Calculate the number of reads (4 lines per read)
+        READ_COUNT=\$((LINE_COUNT / 4))
+
+        echo "Number of reads in ${inputFile}: \$READ_COUNT"
+
+        # Calculate Percent GC
+        ## Count the number of G and C nucleotides
+        GC_COUNT=\$(grep -E '^[ATCGN]+\$' "${inputFile}" | tr -cd 'GCgc' | wc -c)
+        ## Count the total number of nucleotides (A, T, C, G)
+        TOTAL_BASE_COUNT=\$(grep -E '^[ATCGN]+\$' "${inputFile}" | tr -cd 'ATCGatcg' | wc -c)
+        ## Calculate the GC content as a percentage
+        GC_CONTENT=\$(awk "BEGIN {print (\$GC_COUNT / \$TOTAL_BASE_COUNT) * 100}")
+
+        echo "GC content in ${inputFile}: \$GC_CONTENT%"
+        """
+}
+``` 
+
+There's a lot of moving parts in this file. You'll probably recognize the code block from our previous exercises, but with a few changes. But let's go by each block on the process!
+
+#### Input
+
+The `input` block allows you to define the input channels of a process, similar to function arguments. A process may have at most one input block, and it must contain at least one input.
+
+The input block follows the syntax shown below:
+
+```nextflow
+input:
+  <input qualifier> <input name> 
+```
+
+The input qualifier defines the type of data to be received. Several are available and can be consulted [here](https://www.nextflow.io/docs/latest/process.html#inputs). In this case we use the path qualifier, which handles inputs as a path, staging the file properly in the execution context.
+
+#### Output
+
+The output block allows you to define the output channels of a process, similar to function outputs. A process may have at most one output block, and it must contain at least one output.
+
+```nextflow
+output:
+  <output qualifier> <output name> [, <option>: <option value>]
+``` 
+
+Like `input`, [several qualifiers exist](https://www.nextflow.io/docs/latest/process.html#outputs). In this case we're emitting the `stdout`of the executed process. Additionally, [several options exist](https://www.nextflow.io/docs/latest/reference/process.html#process-reference-outputs) like making the output optional. 
+
+#### Scritp
+
+The `script` block defines, as a string expression, the script that is executed by the process.
+
+A process may contain only one script, and if the script guard is not explicitly declared, the script must be the final statement in the process block. The script block can be a simple string or a multi-line string. 
+
+:warning: Since Nextflow uses the same Bash syntax for variable substitutions in strings, you must manage them carefully depending on whether you want to evaluate a Nextflow variable or a Bash variable. :warning: In this scenario, we choose to escape the bash variable and all `$` signs to not conflict with nextflow variables. You can learn more about the script block, like how to use other languages other than BASH, [here](https://www.nextflow.io/docs/latest/process.html#script).
+
+### The Nextflow script file
 
 The `main.nf` file is the central script in a Nextflow workflow. It defines the structure and execution logic of the pipeline by orchestrating the processes and connecting them with channels. This file acts as the "blueprint" for how data flows through the pipeline and how tasks are executed.
 
 Let's look at the `main.nf` script of a workflow to count the lines in a file
 
 ```nextflow
+#!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 
+// Correctly include the process definition from the module
+include { fastqStats } from './modules/fastq_stats'
+
 workflow {
-    // Define input data or channels
-    Channel.fromPath('data/*.txt') into inputChannel
+    // Define the input channel from the user-specified path
+    IN_FilePath = Channel.fromPath(params.input).ifEmpty { 
+        exit 1, "No file provided with pattern: ${params.input}"
+    }
 
-    // Call a process module
-    countLines(inputChannel) |>
-    resultChannel
-
-    // Perform additional steps (e.g., view results)
-    resultChannel.view()
+    // Execute the 'fastqStats' process
+    fastqStats(IN_FilePath) | view
 }
-``` 
+```
+
+In here you get a look at the **channels** that are linking information to and between processes. 
 
 #### Processes
 
@@ -218,93 +293,3 @@ process countLines {
 
 ### The Nextflow config file
 
-
-
-
-
-
-## Steps
-
-1. **Set Up Your Development Environment**
-
-   Ensure you have your development environment set up as described in [Exercise 01](./exercise01.md).
-
-2. **Create a New Nextflow Script**
-
-   Create a new file named `main.nf` in the root directory of your repository. This file will contain your Nextflow workflow.
-
-3. **Define the Workflow**
-
-   Open `main.nf` and define the workflow to run the `fastq-peek.sh` script. Use the following template:
-
-   ```nf
-   #!/usr/bin/env nextflow
-
-   nextflow.enable.dsl=2
-
-   process fastq_peek {
-       input:
-       path fastq_file
-
-       output:
-       stdout result
-
-       script:
-       """
-       ./bin/fastq-peek.sh ${fastq_file}
-       """
-   }
-
-   workflow {
-       params.fastq_file = file(params.fastq_file)
-
-       fastq_peek(params.fastq_file)
-   }
-
-4. **Create a Configuration File**
-
-   Create a new file named `nextflow.config` in the root directory of your repository. This file will contain the configuration for your Nextflow workflow.
-
-   ```groovy
-   params {
-       fastq_file = 'data/sample.fastq'
-       output_dir = 'results'
-   }
-
-   process {
-       executor = 'local'
-       withName: fastq_peek {
-           executor = 'local'
-       }
-   }
-
-5. **Run the Workflow with Different Profiles**
-
-   Nextflow allows you to run workflows with different profiles for testing and production environments. You can define these profiles in the `nextflow.config` file.
-
-   Update your `nextflow.config` file to include profiles for `test` and `docker`:
-
-   ```groovy
-   params {
-       fastq_file = 'data/sample.fastq'
-       output_dir = 'results'
-   }
-
-   process {
-       executor = 'local'
-       withName: fastq_peek {
-           executor = 'local'
-       }
-   }
-
-   profiles {
-       test {
-           process.executor = 'local'
-           params.fastq_file = 'data/test_sample.fastq'
-       }
-       docker {
-           process.executor = 'docker'
-           docker.enabled = true
-           docker.container = 'your-docker-image'
-       }
-   }
