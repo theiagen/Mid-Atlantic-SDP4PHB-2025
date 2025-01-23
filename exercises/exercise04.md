@@ -175,7 +175,7 @@ A Nextflow script file is the core of a Nextflow workflow, written in a domain-s
 
 ### The Nextflow module file
 
-The module is where you usually can find the processes of a workflow. Best practise is to have a process per module or to group processes that that share something in common (helps to keep things tidy!). 
+ In Nextflow's DSL2 introduces the concept of **modules**, making it easier to create reusable and composable workflows. The module is where you usually can find the processes of a workflow. Best practise is to have a process per module or to group processes that that share something in common (helps to keep things tidy!). Processes are defined inside module files and then included in a main workflow. 
 
 Let's look at the `fastq_stats.nf` module to get number of reads and GC content of a FASTQ file
 
@@ -270,26 +270,74 @@ workflow {
 
 In here you get a look at the **channels** that are linking information to and between processes. 
 
-#### Processes
 
-In Nextflow's DSL2 introduces the concept of **modules**, making it easier to create reusable and composable workflows. Processes are defined inside module files and then included in a main workflow. 
-
-Let's look at an example of a process to count lines in a file:
-
-```nextflow
-process countLines {
-    input:
-    path inputFile
-
-    output:
-    path 'result.txt'
-
-    script:
-    """
-    wc -l $inputFile > result.txt
-    """
-}
-````
 
 ### The Nextflow config file
+
+When a pipeline script is launched, Nextflow looks for configuration files. By default it searches for `nextflow.config` but one can be provided directly via the `-c <config-file>` optional parameter.
+
+The Nextflow configuration syntax is based on the Nextflow script syntax. It is designed for setting configuration options in a declarative manner while also allowing for dynamic expressions where appropriate. Nextflow config file may consist of any number of assignments, blocks, and includes. Config files may also contain comments in the same manner as scripts. See [here](https://www.nextflow.io/docs/latest/reference/syntax.html#syntax-page) for more information on Nextflow's syntax. 
+
+```nextflow
+// Define default settings
+params {
+    input = null
+}
+
+// Configure process settings (e.g., executor, memory, container)
+process {
+    executor = 'local'       // Use the local machine for execution
+    cpus = 2                 // Default to 2 CPUs per process
+    memory = '2 GB'          // Default to 2 GB memory per process
+    time = '1h'              // Default to 1 hour max runtime
+}
+
+// Define profiles for different environments
+profiles {
+    standard {
+        // Default profile for local execution
+        process.executor = 'local'
+    }
+
+    docker {
+        // Use Docker containers
+        process {
+            executor = 'docker'
+            container = 'ubuntu:20.04' // Example container image
+        }
+    }
+
+    slurm {
+        // Example configuration for SLURM clusters
+        process.executor = 'slurm'
+        process.queue = 'batch'
+    }
+}
+
+// Logging and reporting
+timeline {
+    enabled = true  // Enable timeline generation
+    overwrite = true  // Overwrite timeline file
+    file = "timeline.html"
+}
+
+trace {
+    enabled = true  // Enable trace file
+    overwrite = true  // Overwrite trace file
+    file = "trace.txt"
+}
+
+report {
+    enabled = true  // Enable report generation
+    overwrite = true  // Overwrite report file
+    file = "report.html"
+}
+
+dag {
+    enabled = true  // Enable workflow DAG generation
+    overwrite = true  // Overwrite DAG file
+    file = "dag.png"
+}
+
+```
 
