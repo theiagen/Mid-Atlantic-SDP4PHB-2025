@@ -3,13 +3,14 @@
 ## Creating a dev branch and staging/committing changes
 
 1. Access your dev environment through GitPod:
-    - Navigate to https://gitpod.io/
-    - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
-    - Select your existing workspace from Week 1
-       - Select the three verticle dots on the right-hand side of your workspace and select "Open"
+    - Navigate to https://app.gitpod.io/
+        - If needed, select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
+    - In the Mid-Atlantic-SDP4PHB-2025 organization, select the existing environment at the bottom of the right-side column
+    - Restart the environment
+    - Click on the "Open with VS Code" button
 
 <p align="center">
-  <img src="../images/e2-1.png" width="1000" class="center">
+  <img src="../images/e2-1.png" width="400" class="center">
 </p>
 
 2. Currently, you should be working within the main branch of this repo, but this is a protected branch to which we cannot commit direcly. Instead, a dev branch must be created and PR issued to push changes to main. To do this:
