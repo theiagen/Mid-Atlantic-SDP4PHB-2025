@@ -2,15 +2,23 @@
 
 1. Assess our [Design Doc](./design-doc.md) to gain an thorough understanding of our project's **Problem Statement**, **Objectives**, **Proposed Solution**, and **Implementation Plan**.
 
-2. Use GitPod to create a dev environment:
-    - Navigate to https://gitpod.io/
+2. Use GitPod Flex to create a dev environment:
+    - Navigate to https://app.gitpod.io/
     - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
-    - Start New Workspace
+    - In the Mid-Atlantic-SDP4PHB-2025 organization, create a new environment
     - Set the repository to https://github.com/theiagen/Mid-Atlantic-SDP4PHB-2025/
-    - Select the default Editor and default Class, click "Continue"
+    - Click on the "Open with VS Code" button
   
 <p align="center">
-  <img src="../images/e1-1.png" width="600" class="center">
+  <img src="../images/rm_gitpodflex_02.png" width="400" class="center">
+</p>
+
+<p align="center">
+  <img src="../images/rm_gitpodflex_03.png" width="400" class="center">
+</p>
+
+<p align="center">
+  <img src="../images/rm_gitpodflex_06.png" width="800" class="center">
 </p>
 
 3. Familiarize yourself with the VSCode environment
@@ -18,6 +26,7 @@
 <p align="center">
   <img src="../images/e1-3.png" width="800" class="center">
 </p>
+
 
 4. Assess the [fastq-peek.sh](../bin/fastq-peek.sh) software and test it using the [benchmark read data](../data/sample.fastq):
    `./bin/fastq-peek.sh ./data/sample.fastq`
@@ -33,19 +42,11 @@
 
 7. Save your changes within your workspace
 
-8. Once you're finished working, make sure to shut down your workspace to save your allotted free hours (50hr/month) in GitPod. There are a few ways to stop your workspace from running:
-  - In GitPod environment (VSCode interface), click on the orange Gitpod in bottom left corner. Select "Stop Workspace"
+8. Once you're finished working, make sure to shut down your workspace. Click on the toggle next to "Running", either on VS Code or on Gitpod Flex platform, to turn everything off.
 
 <p align="center">
-  <img src="../images/stop-workspace.png" width="600" class="center">
+  <img src="../images/rm_gitpodflex_08.png" width="600" class="center">
 </p>
-
-  - Navigate to https://gitpod.io/, find your workspace in the list, click on the three-dot button, and select "Stop"
-
-<p align="center">
-  <img src="../images/stop-workspace2.png" width="800" class="center">
-</p>
-
 
 <details>
  <summary> Exercise 1 Solution
