@@ -278,6 +278,10 @@ When a pipeline script is launched, Nextflow looks for configuration files. By d
 
 The Nextflow configuration syntax is based on the Nextflow script syntax. It is designed for setting configuration options in a declarative manner while also allowing for dynamic expressions where appropriate. Nextflow config file may consist of any number of assignments, blocks, and includes. Config files may also contain comments in the same manner as scripts. See [here](https://www.nextflow.io/docs/latest/reference/syntax.html#syntax-page) for more information on Nextflow's syntax. 
 
+**Processes** can be configured seperately by calling the `process` scope. More information if available [here](https://www.nextflow.io/docs/latest/config.html#process-configuration). 
+
+Configuration files can contain the definition of one or more **profiles**. A profile is a set of configuration attributes that can be selected during pipeline execution by using the `-profile` command line option. More information if available [here](https://www.nextflow.io/docs/latest/config.html#config-profiles).
+
 ```nextflow
 // Define default settings
 params {
@@ -303,7 +307,7 @@ profiles {
         // Use Docker containers
         process {
             executor = 'docker'
-            container = 'ubuntu:20.04' // Example container image
+            container = 'ubuntu:jammy' // Example container image
         }
     }
 
@@ -314,30 +318,16 @@ profiles {
     }
 }
 
-// Logging and reporting
-timeline {
-    enabled = true  // Enable timeline generation
-    overwrite = true  // Overwrite timeline file
-    file = "timeline.html"
-}
-
-trace {
-    enabled = true  // Enable trace file
-    overwrite = true  // Overwrite trace file
-    file = "trace.txt"
-}
-
-report {
-    enabled = true  // Enable report generation
-    overwrite = true  // Overwrite report file
-    file = "report.html"
-}
-
-dag {
-    enabled = true  // Enable workflow DAG generation
-    overwrite = true  // Overwrite DAG file
-    file = "dag.png"
-}
-
 ```
 
+### Putting everything together
+
+There's a way to organize all the files you've just created to keep them tidy! The modules live in a `modules` folder where the `main.nf` and `nextflow.config` files are. 
+
+<details>
+ <summary> Exercise 4 Solution
+ </summary><br />
+
+The nextflow module, workflow script and config files can be found in the [back of the book](../back-of-the-book/nextflow/).
+
+</details>
