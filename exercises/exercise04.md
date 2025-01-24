@@ -290,7 +290,6 @@ params {
 
 // Configure process settings (e.g., executor, memory, container)
 process {
-    executor = 'local'       // Use the local machine for execution
     cpus = 2                 // Default to 2 CPUs per process
     memory = '2 GB'          // Default to 2 GB memory per process
     time = '1h'              // Default to 1 hour max runtime
