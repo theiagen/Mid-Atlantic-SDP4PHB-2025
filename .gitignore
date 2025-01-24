@@ -169,3 +169,13 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Nextflow 
+.nextflow/
+results/
+.nextflow.log*
+work/
+trace.txt
+timeline.html
+report.html
+dag.dot
