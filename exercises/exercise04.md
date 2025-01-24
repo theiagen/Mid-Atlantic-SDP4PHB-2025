@@ -323,6 +323,26 @@ profiles {
 
 There's a way to organize all the files you've just created to keep them tidy! The modules live in a `modules` folder where the `main.nf` and `nextflow.config` files are. 
 
+<p align="center">
+  <img src="../images/e4-2.png" width="400" class="center">
+</p>
+
+### Running the workflow
+
+To run it with the `standard` profile, you can simply execute 
+
+```nextflow
+nextflow run ./bin/nextflow/main.nf --input ./data/sample.fastq
+```
+
+<p align="center">
+  <img src="../images/e4-3.png" width="400" class="center">
+</p>
+
+For other profiles, like [Docker](https://www.docker.com/), you simply need to provide `-profile docker` but you need to have `docker` installed and configured in your system.
+
+Congratulations! You've successfully wrote and executed your first Nextflow workflow!!
+
 <details>
  <summary> Exercise 4 Solution
  </summary><br />
