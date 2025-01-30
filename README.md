@@ -35,7 +35,7 @@ All lecture content will be recorded and made available through this GitHub repo
 ### Slides & Exercises
 **Week 00: Training Kick-Off**
 - [Lecture Slides](./slides/Week%200%20-%20Mid-Atlantic%20WFD%20Training%20Workshop_%20Training%20Kick%20Off.pdf)
-- [Recording]()
+- [Recording](https://youtu.be/gq9RVefVebc)
 
 **Week 01: Design Documents & Development Environments**
 - [Lecture Slides]()
