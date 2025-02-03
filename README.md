@@ -37,6 +37,10 @@ All lecture content will be recorded and made available through this GitHub repo
 - [Lecture Slides](./slides/Week%200%20-%20Mid-Atlantic%20WFD%20Training%20Workshop_%20Training%20Kick%20Off.pdf)
 - [Recording](https://youtu.be/gq9RVefVebc)
 
+**Week 00: Supplemental Session**
+- [Lecture Slides](./slides/Week%200.5%20-%20Mid-Atlantic%20WFD%20Training%20Workshop_%20Supplemental%20Session.pdf)
+- [Recording](https://youtu.be/TwwBsvwFb78)
+
 **Week 01: Design Documents & Development Environments**
 - [Lecture Slides]()
 - [Recording]()
