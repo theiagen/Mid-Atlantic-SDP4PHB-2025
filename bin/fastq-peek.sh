@@ -38,8 +38,9 @@ while IFS= read -r line; do
     ##but does not start with @
     if [[ $line == [A-Za-z]* && $line != "@"* ]]; then
         #Count number of letters in line
-        NUCLEOTIDE_per_LINE=$(($(echo $line| wc -c) - 1))
-        ALL_NUCLEOTIDES_COUNT=$(($NUCLEOTIDE_per_LINE +  $ALL_NUCLEOTIDES_COUNT))
+        NUCLEOTIDE_PER_LINE=$(($(echo $line| wc -c) - 1))
+        #Add nucleotides in line to total nucleotides
+        ALL_NUCLEOTIDES_COUNT=$(($NUCLEOTIDE_PER_LINE +  $ALL_NUCLEOTIDES_COUNT))
         #Count number G's in line
         G_COUNT=$(echo $line| grep -o -i "G" | wc -l)
         #Count number of C's in line
