@@ -42,8 +42,8 @@ All lecture content will be recorded and made available through this GitHub repo
 - [Recording](https://youtu.be/TwwBsvwFb78)
 
 **Week 01: Design Documents & Development Environments**
-- [Lecture Slides]()
-- [Recording]()
+- [Lecture Slides](./slides/_Week%201%20Lecture%20-%20Mid-Atlantic%20WFD%20Training%20Workshop_%20Design%20Docs%20%26%20Dev%20Environments.pdf)
+- [Recording](https://youtu.be/6znvGZfrsvE)
 - [Exercise 01: Design Doc, Dev Environment, and Scripting with VSCode](./exercises/exercise01.md)
 
 **Week 02: Git Fundamentals and Making Source Code Modifications**
