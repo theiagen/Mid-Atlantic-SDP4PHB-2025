@@ -36,7 +36,4 @@ GC_COUNT=$(sed -n '2~4p' "$FASTQ_FILE" | grep -o '[GCgc]' | wc -l)
 #GC_PERCENT=$(($(($GC_COUNT / $TOTAL_BASE_COUNT)) * 100))
 GC_PERCENT=$(awk "BEGIN {print ($GC_COUNT / $TOTAL_BASE_COUNT) * 100}")
 
-#echo $TOTAL_BASE_COUNT
-#echo $GC_COUNT
-#echo $GC_PERCENT
 echo "The GC content in $FASTQ_FILE: $GC_PERCENT%"
