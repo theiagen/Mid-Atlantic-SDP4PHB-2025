@@ -10,7 +10,7 @@ A Mid-Atlantic Workforce Development Offering Provided by the Division of Consol
 - [Prerequisites for Hands-On Exercises](#prerequisites-for-hands-on-exercises)
 
 ## Overview 
-The  Division of Consolidated Laboratory Services, in collaboration with Theiagen Genomics, will be hosting a Software Development Practices for Public Health Bioinformatics Course. This will be a virtual workshop hosted on Tuesdays and Thursdays via Zoom from **February 4th - 27st, 2025**. All training materials will be hosted on this GitHub page to encourage self-paced and asynchronous learning. 
+The  Division of Consolidated Laboratory Services, in collaboration with Theiagen Genomics, will be hosting a Software Development Practices for Public Health Bioinformatics Course. This will be a virtual workshop hosted on Tuesdays and Thursdays via Zoom from **February 4th - 27th, 2025**. All training materials will be hosted on this GitHub page to encourage self-paced and asynchronous learning. 
 
 ### Training Objectives
 - Knowledge of best software development practices applied to public health bioinformatics such as design documents and the use of integrated development environments 
@@ -21,10 +21,10 @@ The  Division of Consolidated Laboratory Services, in collaboration with Theiage
 ### Target Audience
 This course is designed for bioinformatics scientists interested in strengthening their skill sets as pipeline developers. We aim to cover a comprehensive range of topics, from foundational concepts to advanced techniques, ensuring you gain the knowledge and tools needed to excel in your field. 
 
-Participants should have a strong background in bioinformatics, specifically accessing open-source tools through a command-line interface, running bioinformatics pipelines, and proficiency in at least one scripting language (e.g. Python, Perl, or BASH).  Participants should also have a GitHub account (or an ability to create one). This training is most beneficial for those with access to a Linux environment within their host institution.
+Participants should have a strong background in bioinformatics, specifically accessing open-source tools through a command-line interface, running bioinformatics pipelines, and proficiency in at least one scripting language (e.g. Python, Perl, or BASH).  Participants should also have a GitHub account (or the ability to create one). This training is most beneficial for those with access to a Linux environment within their host institution.
 
 ### Course Format 
-This will be a 4-week training series occurring on Tuesdays and Thrusdays from February 4th - 27th, 2025: 
+This will be a 4-week training series occurring on Tuesdays and Thursdays from February 4th - 27th, 2025: 
 - Tuesdays (90 min): Lecture material with hands-on exercises
 - Thursdays (60 min): "Office hours" style meeting where participants can ask any questions about the material, and the trainers will address any errors encountered by participants.
 
@@ -47,8 +47,8 @@ All lecture content will be recorded and made available through this GitHub repo
 - [Exercise 01: Design Doc, Dev Environment, and Scripting with VSCode](./exercises/exercise01.md)
 
 **Week 02: Git Fundamentals and Making Source Code Modifications**
-- [Lecture Slides]()
-- [Recording]()
+- [Lecture Slides](./slides/_Week%202%20Lecture%20-%20Mid-Atlantic%20WFD%20Training%20Workshop_%20Dev%20Practices%20%2B%20Git.pdf)
+- [Recording](https://youtu.be/8c_DnAToV-A)
 - [Exercise 02: Version Control with Git](./exercises/exercise02.md)
 
 **Week 03: Bringing Changes into Production**
@@ -56,7 +56,7 @@ All lecture content will be recorded and made available through this GitHub repo
 - [Recording]()
 - [Exercise 03: GitHub Actions & Static Releases](./exercises/exercise03.md)
   
-**Week 04: Getting started with Nextflow**
+**Week 04: Getting Started with Nextflow**
 - [Lecture Slides]()
 - [Recording]()
 - [Exercise 04: Writing Your First Nextflow Workflow](./exercises/exercise04.md)
@@ -65,19 +65,19 @@ All lecture content will be recorded and made available through this GitHub repo
 In addition to lectures, this course consists of several hands-on exercises to reinforce the coursework material. To participate in these exercises, trainees will need the following resources: 
 
 ### GitHub Account
-If you don't already have a GitHub account, please go to github.com and register (it's free!). To sign-in to GitHub, please follow the URL at https://github.com/signup
-  - Once you have registered, ensure you are signed into your account on https://github.com
+If you don't already have a GitHub account, please go to github.com and register (it's free!). To sign in to GitHub, please follow the URL at https://github.com/signup
+  - Once you have registered, ensure you are signed into your account at https://github.com
 
 ### Visual Studio Code
-Visual Studio Code, commonly referred to as VS Code, is an Integrated Development Environment (IDE) developed by Microsoft for Windows, Linux, macOS. Features include support for debugging, syntax highlighting, and embedded version control with Git. VS Code supports almost every major programming language. 
+Visual Studio Code, commonly referred to as VS Code, is an Integrated Development Environment (IDE) developed by Microsoft for Windows, Linux, and macOS. Features include support for debugging, syntax highlighting, and embedded version control with Git. VS Code supports almost every major programming language. 
 - You can download VS Code for your system at https://code.visualstudio.com 
 
 ### GitPod Flex Account 
 - Navigate to https://app.gitpod.io/
 - Select "Continue with GitHub", authorize Gitpod to access your GitHub account, and sign in with your credentials
 
-#### Creating your own ograzination
-Once your account is connected to GitPod, it will prompt you to create an organization. Unfortunately this step cannot be skipped. You create an organization with whatever name you wish, this will not matter once you are invited to this course's organization. 
+#### Creating your own organization
+Once your account is connected to GitPod, it will prompt you to create an organization. Unfortunately, this step cannot be skipped. You create an organization with whatever name you wish, this will not matter once you are invited to this course's organization. 
 
 <p align="center">
   <img src="./images/rm_gitpodflex_01.png" width="800" class="center">
@@ -97,7 +97,7 @@ Once registered and part of this course's organization, navigate to **Create Env
   <img src="./images/rm_gitpodflex_03.png" width="400" class="center">
 </p>
 
-  - You«ll be prompted to connect to GitHub via an access token. Select the **Developer Settings** URL and follow the configuration process on GitHub.
+  - You'll be prompted to connect to GitHub via an access token. Select the **Developer Settings** URL and follow the configuration process on GitHub.
 
 <p align="center">
   <img src="./images/rm_gitpodflex_04.png" width="400" class="center">
