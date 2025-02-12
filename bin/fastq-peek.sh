@@ -26,3 +26,16 @@ LINE_COUNT=$(wc -l < "$FASTQ_FILE")
 READ_COUNT=$((LINE_COUNT / 4))
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
+
+# Calculate percent GC of all fastq reads in file
+## Confirm processing of sequence line
+#awk 'NR % 4 == 2' $FASTQ_FILE > 'test.out'
+
+## Get total of non-ambiguous bases and total of GC bases
+TOTAL_BASE_COUNT=$(awk 'NR % 4 == 2' "$FASTQ_FILE" | tr -cd 'ACGT' | wc -c)
+GC_COUNT=$(awk 'NR % 4 == 2' "$FASTQ_FILE" | tr -cd 'GC' | wc -c)
+#echo "$TOTAL_BASE_COUNT"
+#echo "$GC_COUNT"
+GC_PERCENT=$(awk "BEGIN {print $GC_COUNT / $TOTAL_BASE_COUNT * 100}")
+
+echo "$FASTQ_FILE GC Content: $GC_PERCENT"
