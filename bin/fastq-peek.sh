@@ -26,3 +26,38 @@ LINE_COUNT=$(wc -l < "$FASTQ_FILE")
 READ_COUNT=$((LINE_COUNT / 4))
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
+
+# Count the number of total bases in the FASTQ file 
+for ((i = 1; i <= READ_COUNT; i++)); do 
+    # Extract the second line of each read (the sequence line)
+    READ=$(sed -n "$((i * 4 - 2))p" "$FASTQ_FILE")
+    # Calculate the length of the read
+    READ_LENGTH=${#READ}
+    # Calculate the total number of bases
+    TOTAL_BASE_COUNT=$((TOTAL_BASE_COUNT + READ_LENGTH))
+    # Store the sequence in a variable
+    TOTAL_BASES+="$READ"
+    # Print the length of the sequence
+    #echo "Length of read $i: $READ_LENGTH"
+done
+
+# Print the total number of bases
+#echo "Total bases: $TOTAL_BASE_COUNT"
+
+# Print the complete sequence
+#echo "Complete sequence: $TOTAL_BASES"
+
+# Calculate the number of GC bases in the FASTQ file
+GC_TOTAL=$(echo "$TOTAL_BASES" | grep -o '[GC]' | wc -l)
+
+# Ptint the GC total
+#echo "GC total: $GC_TOTAL"
+
+# Scaled GC total
+GC_SCALED=$((GC_TOTAL * 100))
+
+# Calculate the GC percentage
+GC_PERCENTAGE=$(($GC_SCALED / $TOTAL_BASE_COUNT))
+
+# Report the GC percentage
+echo "GC percentage: $GC_PERCENTAGE%"
