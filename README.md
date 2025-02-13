@@ -1,6 +1,8 @@
 # Software Development Practices for Public Health Bioinformatics
 A Mid-Atlantic Workforce Development Offering Provided by the Division of Consolidated Laboratory Services in Collaboration with Theiagen Genomics
 
+Inês is awesome and so is Sage! And Frank!
+
 ## Content
 - [Overview](#overview) 
   - [Training Objectives](#training-objectives)
