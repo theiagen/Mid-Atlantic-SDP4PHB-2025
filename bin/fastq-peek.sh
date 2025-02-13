@@ -24,5 +24,12 @@ echo "Processing FASTQ file: $FASTQ_FILE"
 LINE_COUNT=$(wc -l < "$FASTQ_FILE")
 ## Calculate the number of reads (4 lines per read)
 READ_COUNT=$((LINE_COUNT / 4))
+## Remove AT from every 2nd line; get the length of that line
+GC_COUNT=$(awk '(NR%4==2) {gsub(/[ATNatn]/, ""); N+=length($0);}END{print N;}' < "$FASTQ_FILE")
+## Get the length of every 2nd line
+TOTAL_BASE_COUNT=$(awk '(NR%4==2) {N+=length($0);}END{print N;}' < "$FASTQ_FILE")
+## Calculate GC content of file
+GC_PERCENT=$(echo $GC_COUNT $TOTAL_BASE_COUNT | awk '{ print $1/$2*100 }')
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
+printf "GC content in %s: %.2f%%\n" $FASTQ_FILE $GC_PERCENT
