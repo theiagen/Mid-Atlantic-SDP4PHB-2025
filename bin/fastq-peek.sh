@@ -42,3 +42,4 @@ echo "Total number of bases: $TOTAL_BASE_COUNT"
 GC_PERCENT=$((100*$GC_COUNT/$TOTAL_BASE_COUNT))
 
 echo "GC Percent : $GC_PERCENT%"
+#COMMENT
