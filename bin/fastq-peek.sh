@@ -27,7 +27,7 @@ READ_COUNT=$((LINE_COUNT / 4))
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
 
-# Count the number of total bases in the FASTQ file 
+# Count the number of total bases in the FASTQ file and combine all bases into one string
 for ((i = 1; i <= READ_COUNT; i++)); do 
     # Extract the second line of each read (the sequence line)
     READ=$(sed -n "$((i * 4 - 2))p" "$FASTQ_FILE")
@@ -60,4 +60,4 @@ GC_SCALED=$((GC_TOTAL * 100))
 GC_PERCENTAGE=$(($GC_SCALED / $TOTAL_BASE_COUNT))
 
 # Report the GC percentage
-echo "GC percentage: $GC_PERCENTAGE%"
+echo "GC percentage in $FASTQ_FILE: $GC_PERCENTAGE%"
