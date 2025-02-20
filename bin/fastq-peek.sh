@@ -26,3 +26,14 @@ LINE_COUNT=$(wc -l < "$FASTQ_FILE")
 READ_COUNT=$((LINE_COUNT / 4))
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
+
+# Count total bases and calculate GC percentage
+TOTAL_BASE_COUNT=$(sed -n '2~4p' $FASTQ_FILE | grep -o '[ATGCNatgcn]' | wc -l)
+GC_COUNT=$(sed -n '2~4p' "$FASTQ_FILE" | grep -o '[GCgc]' | wc -l)
+#GC_FRAC=$(($GC_COUNT / $TOTAL_BASE_COUNT))
+#GC_PERCENT=$((GC_FRAC * 100))
+#GC_PERCENT=$(echo "($GC_COUNT / $TOTAL_BASE_COUNT) * 100" | bc)
+#GC_PERCENT=$(($(($GC_COUNT / $TOTAL_BASE_COUNT)) * 100))
+GC_PERCENT=$(awk "BEGIN {print ($GC_COUNT / $TOTAL_BASE_COUNT) * 100}")
+
+echo "The GC content in $FASTQ_FILE: $GC_PERCENT%"
