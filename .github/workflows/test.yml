@@ -25,6 +25,7 @@ jobs:  # Define jobs for the workflow
           # Save the expected output to a file
           echo "Processing FASTQ file: ./data/sample.fastq" > expected_output.txt
           echo "Number of reads in ./data/sample.fastq: 2" >> expected_output.txt
+          echo "The GC content in ./data/sample.fastq: 50%" >> expected_output.txt
           
           # Capture the actual output of the script and save it to a file
           ./bin/fastq-peek.sh ./data/sample.fastq > actual_output.txt
