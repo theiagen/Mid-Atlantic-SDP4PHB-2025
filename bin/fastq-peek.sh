@@ -27,7 +27,7 @@ READ_COUNT=$((LINE_COUNT / 4))
 
 echo "Number of reads in $FASTQ_FILE: $READ_COUNT"
 
-# Calculate Percent GC
+# Calculate Percent GC 
 ## Count the number of G and C nucleotides
 GC_COUNT=$(grep -E '^[ATCGN]+$' "$FASTQ_FILE" | tr -cd 'GCgc' | wc -c)
 ## Count the total number of nucleotides (A, T, C, G)
